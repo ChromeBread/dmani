@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const y = event.clientY - rect.top;
         console.log(`Clicked at (${x}, ${y})`);
         // ここにドラムの判定ロジックを追加
+        playSound('drum-hit'); // 音声ファイルが無い場合のフォールバック
     });
 
     // コントロールパネルのクリックイベント
@@ -19,4 +20,22 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`Control Panel clicked at (${x}, ${y})`);
         // ここに設定の変更ロジックを追加
     });
+
+    // 音声ファイルのフォールバック関数
+    function playSound(soundName) {
+        try {
+            const audio = new Audio(`assets/sounds/${soundName}.mp3`);
+            audio.play();
+        } catch (error) {
+            console.warn(`Sound file ${soundName}.mp3 not found. Using fallback.`);
+            // フォールバックとして、ビープ音やその他の方法で音を再生
+            const context = new AudioContext();
+            const oscillator = context.createOscillator();
+            oscillator.type = 'sine';
+            oscillator.frequency.setValueAtTime(440, context.currentTime);
+            oscillator.connect(context.destination);
+            oscillator.start();
+            oscillator.stop(context.currentTime + 0.1);
+        }
+    }
 });
