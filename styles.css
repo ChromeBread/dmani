@@ -1,27 +1,24 @@
-body {
-    background-color: #000;
-    color: #fff;
-    font-family: Arial, sans-serif;
-}
-
 .container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
+    display: grid;
+    grid-template-areas:
+        "score drum-pads settings"
+        "credit drum-pads start";
+    background-image: url('background.jpg');
+    background-size: cover;
+    width: 800px;
+    height: 600px;
 }
 
-.score-display, .drum-screen, .control-panel {
-    width: 30%;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #222;
-}
+.score { grid-area: score; }
+.drum-pads { grid-area: drum-pads; }
+.settings { grid-area: settings; }
+.credit { grid-area: credit; }
+.start { grid-area: start; }
 
-.placeholder {
-    font-size: 24px;
-    color: #888;
+.pad {
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    margin: 5px;
+    cursor: pointer;
 }
