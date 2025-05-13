@@ -3,20 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GITADORA Simulator</title>
+    <title>Gitadora Simulator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="score-display">
-            <div class="placeholder">Score Display</div>
+        <div class="score">SCORE 000000</div>
+        <div class="drum-pads">
+            <!-- ドラムパッドの配置 -->
+            <div class="pad" id="pad1"></div>
+            <div class="pad" id="pad2"></div>
+            <!-- 他のパッドも同様に -->
         </div>
-        <div class="drum-screen">
-            <div class="placeholder">Drum Screen</div>
+        <div class="settings">
+            <!-- 設定メニュー -->
+            <div class="setting-item">TYPE</div>
+            <div class="setting-item">WIDE</div>
+            <!-- 他の設定も同様に -->
         </div>
-        <div class="control-panel">
-            <div class="placeholder">Control Panel</div>
-        </div>
+        <div class="credit">CREDIT</div>
+        <div class="start">OK!</div>
     </div>
     <script src="script.js"></script>
 </body>
