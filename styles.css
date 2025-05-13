@@ -3,17 +3,18 @@
     grid-template-areas:
         "score drum-pads settings"
         "credit drum-pads start";
-    background-image: url('background.jpg');
-    background-size: cover;
+    background: linear-gradient(to bottom right, #1a1a1a, #2a2a2a);
     width: 800px;
     height: 600px;
+    color: white;
+    font-family: Arial, sans-serif;
 }
 
-.score { grid-area: score; }
-.drum-pads { grid-area: drum-pads; }
-.settings { grid-area: settings; }
-.credit { grid-area: credit; }
-.start { grid-area: start; }
+.score { grid-area: score; background-color: #000; padding: 10px; }
+.drum-pads { grid-area: drum-pads; display: flex; flex-wrap: wrap; justify-content: center; }
+.settings { grid-area: settings; background-color: #333; padding: 10px; }
+.credit { grid-area: credit; background-color: #444; padding: 10px; }
+.start { grid-area: start; background-color: #555; padding: 10px; }
 
 .pad {
     width: 50px;
@@ -21,4 +22,13 @@
     background-color: #333;
     margin: 5px;
     cursor: pointer;
+    border-radius: 5px;
+}
+
+.pad:hover {
+    background-color: #444;
+}
+
+.pad.active {
+    background-color: #666;
 }
