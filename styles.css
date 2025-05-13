@@ -1,0 +1,23 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.score-display, .drum-screen, .control-panel {
+    width: 30%;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
